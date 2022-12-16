@@ -1,0 +1,28 @@
+{% extends "base.html" %} {% block title %}Prediction{% endblock %} {% block content
+    %}
+
+	<h1 align="center">Maize Irrigation Prediction</h1>
+
+     <!-- Action is where the data is sent. In our case, predict page.
+     If action is omitted, it assumed to be the current page -->
+    
+     <form action="{{ url_for('views.predict')}}" align="center" method="post">
+    	<input type="text" name="soilmoisture" placeholder="Soil Moisture" required="required" /><br></br>
+        <input type="text" name="temperature" placeholder="Temperature" required="required" /><br></br>
+        <input type="text" name="humidity" placeholder="Humidity" required="required" /><p>
+        <div align="center">
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict Irrigation</button></p>
+    </div>
+    </form>
+
+    <br>
+    <br>
+    <h4 align="center" style="color:Violet;">
+    {{ prediction_text }} </h4>
+ 
+  </div>
+
+ </div>
+
+
+ {% endblock %}
