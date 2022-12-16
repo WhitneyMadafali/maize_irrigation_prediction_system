@@ -23,22 +23,7 @@ knn = pickle.load(open('model/knn.pkl', 'rb'))
 @views.route("/index")
 @login_required
 def index():
-    if request.method == 'POST':
-        soilmoisture = request.form.get("soilmoisture")
-        temperature = request.form.get("temperature")
-        humidity = request.form.get("humidity")
-
-        if len(soilmoisture) < 0:
-            flash('Soil Moisture is invalid.', category='error')
-        elif len(temperature) < 0:
-            flash('Temperature is invalid.', category='error')
-        elif len(humidity) < 0:
-            flash('Humidity is invalid', category='error')
-        else:
-            new_input = Input(soilmoisture=soilmoisture, temperature=temperature, humidity=humidity)
-            db.session.add(new_input)
-            db.session.commit()
-            flash('Data inserted successfully!')
+    
     return render_template("index.html", user=current_user)
 
 #Redirect to predict page with the output
