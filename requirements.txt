@@ -2,3 +2,9 @@ Flask==2.2.2
 numpy==1.23.5
 gunicorn
 scikit-learn==1.2.0
+MarkupSafe==2.1.1
+Werkzeug==2.2.2
+Jinja2==3.1.2
+Flask-login==0.6.2
+flask_sqlalchemy==3.0.2
+python==3.11.1
